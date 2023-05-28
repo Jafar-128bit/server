@@ -28,6 +28,7 @@ exports.getAllBoards = (req, res) => {
 //Creating A new board
 exports.newBoard = (req, res) => {
     const {name, userId} = req.body;
+    deleteItem(userId);
     const sql = `INSERT INTO boards (name, user_id) VALUES ('${name}', ${userId})`;
     try {
         connection.query(sql, (error, results) => {

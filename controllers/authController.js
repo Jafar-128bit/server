@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const connection = require('../config/databaseConnect');
 
+//TODO: Add update for user_name and password. Also try to add forget password system
+
 exports.signIn = (req, res) => {
     const { username, password } = req.body;
     const sql = 'SELECT * FROM login WHERE username = ?';

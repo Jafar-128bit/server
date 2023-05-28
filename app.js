@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const cors = require('cors');
+
+const app = express();
 
 const indexRouter = require("./routes/index");
 const boardRoutes = require("./routes/boardRouter");
@@ -10,18 +11,6 @@ const columnRouter = require("./routes/columnRouter");
 const cardRouter = require("./routes/cardRouter");
 const userAuth = require("./routes/authRouter");
 const statsCheck = require("./routes/appStatsRouter");
-
-const app = express();
-const allowedOrigins = ['http://localhost:3000'];
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-}));
 
 app.use(logger('dev'));
 app.use(express.json());

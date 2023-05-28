@@ -4,7 +4,7 @@
       <env name="DEBUG" value="server:*" />
     </envs>
     <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
-      <profiling one-log-file="true" />
+      <profiling allow-runtime-heap-snapshot="true" one-log-file="true" do-profile="true" />
     </EXTENSION>
     <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
       <browser url="http://localhost:3000/" />
